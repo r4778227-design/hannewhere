@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoga Shanti – Yoga Kurse & Premium Yoga Kleidung | Ihr Weg zur inneren Balance</title>
+<meta name="description" content="Yoga Shanti – Professionelle Yoga Kurse in Deutschland und hochwertige nachhaltige Yoga Kleidung. Hatha, Vinyasa, Ashtanga, Yin Yoga und mehr. Jetzt Live-Demo buchen!">
+<meta name="keywords" content="Yoga Kurse, Yoga Kleidung, Hatha Yoga, Vinyasa Yoga, Ashtanga, Yin Yoga, nachhaltige Yoga Mode, Yoga Studio Deutschland">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #6b8e7f;
+    --secondary: #d4b896;
+    --accent: #8b6f47;
+    --dark: #2d3e36;
+    --light: #f7f3ec;
+    --text: #3a3a3a;
+  }
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--light);
+  }
+  header {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--secondary); }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--secondary); }
+
+  .hero {
+    height: 90vh;
+    background: linear-gradient(rgba(45,62,54,0.5), rgba(45,62,54,0.7)),
+                url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1600') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+  }
+  .hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 2.2rem;
+    background: var(--secondary);
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .btn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+
+  section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 2.5rem;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--secondary);
+    margin: 1rem auto;
+  }
+  h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin: 1.5rem 0 0.8rem;
+  }
+  h4 {
+    color: var(--dark);
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+  }
+  p { margin-bottom: 1rem; text-align: justify; }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .intro-grid img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .class-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .class-card:hover { transform: translateY(-10px); }
+  .class-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .class-card-body { padding: 1.5rem; }
+  .class-card h3 { margin-top: 0; }
+  .price {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .product-card:hover { transform: scale(1.03); }
+  .product-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+  .product-card-body { padding: 1.2rem; }
+  .product-price {
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  .demo-section {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+    border-radius: 20px;
+    margin: 3rem auto;
+    max-width: 1200px;
+  }
+  .demo-section h2 { color: white; }
+  .demo-section h2::after { background: var(--secondary); }
+  .demo-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .plan {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.3s;
+  }
+  .plan:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+  }
+  .plan.featured {
+    border-color: var(--secondary);
+    background: rgba(212,184,150,0.2);
+  }
+  .plan h3 { color: var(--secondary); margin-top: 0; }
+  .plan-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    color: white;
+  }
+  .plan ul {
+    list-style: none;
+    text-align: left;
+    margin: 1.5rem 0;
+  }
+  .plan ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .plan ul li::before {
+    content: '✓ ';
+    color: var(--secondary);
+    font-weight: bold;
+  }
+
+  .contact-section {
+    background: white;
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+  .contact-info p { margin-bottom: 1rem; }
+  .contact-info strong { color: var(--accent); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  form textarea { min-height: 120px; resize: vertical; }
+
+  .legal-section {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  }
+  .legal-section h2 { font-size: 2rem; }
+
+  footer {
+    background: var(--dark);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  footer a { color: var(--secondary); text-decoration: none; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    text-align: left;
+  }
+  .footer-grid h4 { color: var(--secondary); }
+  .footer-grid ul { list-style: none; }
+  .footer-grid ul li { padding: 0.3rem 0; }
+  .copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  .gallery img:hover { transform: scale(1.05); }
+
+  @media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .intro-grid, .contact-grid { grid-template-columns: 1fr; }
+    h2 { font-size: 1.8rem; }
+    .nav-links { gap: 0.8rem; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">YOGA <span>SHANTI</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Start</a></li>
+      <li><a href="#about">Über Yoga</a></li>
+      <li><a href="#classes">Kurse</a></li>
+      <li><a href="#shop">Kleidung</a></li>
+      <li><a href="#demo">Live-Demo</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Finde deine innere Balance</h1>
+    <p>Willkommen bei Yoga Shanti – Ihrem Premium-Studio für authentische Yoga-Kurse und nachhaltige Yoga-Kleidung in Deutschland. Erleben Sie die transformative Kraft des Yoga in einer Gemeinschaft aus Gleichgesinnten.</p>
+    <a href="#classes" class="btn">Kurse entdecken</a>
+    <a href="#demo" class="btn" style="margin-left:1rem;">Live-Demo buchen</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Die Kunst des Yoga</h2>
+  <div class="intro-grid">
+    <div>
+      <p>Yoga ist weit mehr als eine bloße körperliche Übung – es ist eine jahrtausendealte Wissenschaft des Lebens, die Körper, Geist und Seele in harmonischer Einheit verbindet. Der Begriff „Yoga" stammt aus dem Sanskrit und bedeutet „Verbindung" oder „Einheit". Seit über 5.000 Jahren wird diese Praxis von Generation zu Generation weitergegeben und hat sich zu einer der beliebtesten Gesundheits- und Wellnessmethoden der modernen Welt entwickelt.</p>
+      <p>Bei Yoga Shanti glauben wir daran, dass Yoga für jeden Menschen zugänglich ist – unabhängig von Alter, Geschlecht, körperlicher Fitness oder spiritueller Überzeugung. Unsere Philosophie basiert auf den klassischen Lehren des Patanjali, den acht Gliedern des Raja Yoga, sowie den zeitlosen Weisheiten der Bhagavad Gita und der Upanishaden. Gleichzeitig integrieren wir moderne wissenschaftliche Erkenntnisse aus der Neurobiologie, Psychologie und Sportmedizin, um unseren Schülern ein ganzheitliches und evidenzbasiertes Erlebnis zu bieten.</p>
+      <h3>Die Geschichte des Yoga</h3>
+      <p>Die Wurzeln des Yoga liegen im alten Indien, wo es ursprünglich als spiritueller Weg zur Selbstverwirklichung entwickelt wurde. Die ersten schriftlichen Aufzeichnungen finden sich in den Veden, den heiligen Schriften des Hinduismus, die vor etwa 3.500 Jahren verfasst wurden. Doch die eigentliche Systematisierung des Yoga erfolgte durch den Weisen Patanjali im 2. Jahrhundert v. Chr. in seinen „Yoga Sutras". Dieses bahnbrechende Werk definiert Yoga als „Chitta Vritti Nirodha" – das Zur-Ruhe-Bringen der Gedankenwellen im Geist.</p>
+      <p>Im Laufe der Jahrhunderte entwickelten sich verschiedene Yoga-Traditionen und -Schulen. Hatha Yoga, das sich auf körperliche Übungen (Asanas) und Atemtechniken (Pranayama) konzentriert, entstand im Mittelalter und wurde durch Werke wie die „Hatha Yoga Pradipika" und die „Gheranda Samhita" überliefert. Im 20. Jahrhundert brachten Meister wie T. Krishnamacharya, B.K.S. Iyengar, Pattabhi Jois und Swami Sivananda das Yoga in den Westen, wo es sich rasant verbreitete und zu einer globalen Bewegung wurde.</p>
+      <h3>Die wissenschaftlichen Vorteile des Yoga</h3>
+      <p>Die moderne Wissenschaft hat in den letzten Jahrzehnten zahlreiche gesundheitliche Vorteile des Yoga belegt. Zahlreiche peer-reviewte Studien in renommierten Fachzeitschriften wie dem „Journal of Alternative and Complementary Medicine", „Psychosomatic Medicine" und „Frontiers in Human Neuroscience" bestätigen die positiven Auswirkungen regelmäßiger Yoga-Praxis auf die physische und psychische Gesundheit.</p>
+      <p>Zu den nachgewiesenen Vorteilen gehören: Reduktion von Stress und Angstzuständen durch Senkung des Cortisolspiegels, Verbesserung der Flexibilität und Muskelkraft, Linderung chronischer Rückenschmerzen, Senkung des Blutdrucks, Verbesserung der Schlafqualität, Stärkung des Immunsystems, Förderung der emotionalen Regulation, Steigerung der Konzentrationsfähigkeit und kognitiven Leistung, sowie die Förderung von Achtsamkeit und Selbstmitgefühl. Neuere Forschungen deuten zudem darauf hin, dass Yoga die Telomerlänge beeinflussen und somit den Alterungsprozess verlangsamen kann.</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800" alt="Yoga Meditation">
+    </div>
+  </div>
+
+  <div class="intro-grid" style="margin-top:4rem;">
+    <div>
+      <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800" alt="Yoga Praxis">
+    </div>
+    <div>
+      <h3>Die acht Glieder des Yoga nach Patanjali</h3>
+      <p>Das klassische Yoga-System nach Patanjali umfasst acht Stufen oder „Glieder" (Ashtanga), die einen umfassenden Weg zur persönlichen Entwicklung und spirituellen Reife beschreiben. Diese acht Glieder sind:</p>
+      <p><strong>1. Yama (ethische Regeln):</strong> Ahimsa (Gewaltlosigkeit), Satya (Wahrhaftigkeit), Asteya (Nicht-Stehlen), Brahmacharya (Enthaltsamkeit bzw. Maßhalten) und Aparigraha (Unbestechlichkeit bzw. Nicht-Anhaften). Diese Prinzipien bilden das ethische Fundament der Yoga-Praxis und gelten im Umgang mit Mitmenschen und der Umwelt.</p>
+      <p><strong>2. Niyama (persönliche Disziplinen):</strong> Shaucha (Reinheit), Santosha (Zufriedenheit), Tapas (Disziplin), Svadhyaya (Selbststudium) und Ishvara Pranidhana (Hingabe an das Höhere). Diese Praktiken beziehen sich auf die persönliche Entwicklung und innere Haltung.</p>
+      <p><strong>3. Asana (Körperhaltungen):</strong> Die körperlichen Yoga-Übungen, die heute im Westen am bekanntesten sind. Patanjali definiert Asana als „sthira sukham asanam" – eine Haltung, die stabil und angenehm zugleich ist.</p>
+      <p><strong>4. Pranayama (Atemkontrolle):</strong> Die bewusste Steuerung des Atems, die als Brücke zwischen Körper und Geist dient. Durch Pranayama wird die Lebensenergie (Prana) reguliert und der Geist beruhigt.</p>
+      <p><strong>5. Pratyahara (Rückzug der Sinne):</strong> Die Fähigkeit, die Aufmerksamkeit von äußeren Reizen nach innen zu lenken – eine essentielle Voraussetzung für tiefere Meditationspraktiken.</p>
+      <p><strong>6. Dharana (Konzentration):</strong> Die gebündelte Ausrichtung des Geistes auf ein einzelnes Objekt, einen Gedanken oder einen Körperteil.</p>
+      <p><strong>7. Dhyana (Meditation):</strong> Der ununterbrochene Fluss der Aufmerksamkeit – der Zustand der Meditation, in dem das Subjekt-Objekt-Denken allmählich verschwindet.</p>
+      <p><strong>8. Samadhi (Erleuchtung):</strong> Der höchste Zustand des Yoga, in dem das individuelle Bewusstsein mit dem universalen Bewusstsein verschmilzt – ein Zustand tiefer Einheit und absoluten Friedens.</p>
+      <h3>Yoga im modernen Alltag</h3>
+      <p>In unserer heutigen schnelllebigen Welt, geprägt von digitalem Stress, Bewegungsmangel und ständiger Erreichbarkeit, gewinnt Yoga zunehmend an Bedeutung. Immer mehr Menschen erkennen, dass die bewusste Verbindung von Körper, Atem und Geist ein wirksames Gegenmittel zu den Herausforderungen des modernen Lebens darstellt. Yoga bietet einen geschützten Raum, in dem wir lernen können, im Hier und Jetzt zu verweilen, Stress loszulassen und wieder in Kontakt mit unserem wahren Selbst zu treten.</p>
+      <p>Die Integration von Yoga in den Alltag muss dabei nicht kompliziert sein. Bereits 15 bis 20 Minuten tägliche Praxis können spürbare Veränderungen bewirken – sei es in Form einer Morgenroutine mit Sonnengrüßen (Surya Namaskar), einer kurzen Meditation in der Mittagspause oder einer entspannenden Yin-Yoga-Einheit am Abend. Wichtig ist die Regelmäßigkeit und die innere Haltung, mit der wir uns der Praxis widmen.</p>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=500" alt="Yoga Pose 1">
+    <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=500" alt="Yoga Pose 2">
+    <img src="https://images.unsplash.com/photo-1593810450967-96945b031372?w=500" alt="Yoga Pose 3">
+    <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=500" alt="Yoga Pose 4">
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500" alt="Yoga Pose 5">
+    <img src="https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?w=500" alt="Yoga Pose 6">
+  </div>
+</section>
+
+<section id="classes">
+  <h2>Unsere Yoga Kurse</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">Entdecken Sie unser vielfältiges Kursangebot, das von traditionellen Hatha-Yoga-Stunden bis hin zu modernen, dynamischen Vinyasa-Flow-Einheiten reicht. Jeder Kurs wird von zertifizierten und erfahrenen Yogalehrern geleitet, die Sie liebevoll und kompetent auf Ihrem persönlichen Weg begleiten.</p>
+
+  <div class="classes-grid">
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1593164842264-854604db2260?w=600" alt="Hatha Yoga">
+      <div class="class-card-body">
+        <h3>Hatha Yoga</h3>
+        <p>Der klassische Einstieg in die Welt des Yoga. Hatha Yoga verbindet sanfte Körperhaltungen (Asanas) mit bewusster Atmung (Pranayama) und tiefer Entspannung. Dieser Kurs ist ideal für Anfänger, aber auch für erfahrene Praktizierende, die eine ruhigere und grundlegendere Praxis suchen. In jeder Stunde lernen Sie die korrekte Ausrichtung der Asanas, vertiefen Ihr Verständnis für die Wirkung der Übungen auf Körper und Geist und entwickeln eine stabile Grundlage für Ihre persönliche Yoga-Praxis. Die langsamen Bewegungen und längeren Haltungen ermöglichen es Ihnen, tief in jede Pose einzutauchen und die subtilen Empfindungen Ihres Körpers wahrzunehmen.</p>
+        <p><strong>Dauer:</strong> 75 Minuten | <strong>Level:</strong> Anfänger bis Fortgeschrittene</p>
+        <span class="price">15 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600" alt="Vinyasa Flow">
+      <div class="class-card-body">
+        <h3>Vinyasa Flow</h3>
+        <p>Der dynamische „Fluss" des Yoga. Vinyasa Yoga verbindet Bewegung und Atem in einer fließenden, meditativen Sequenz, die sich wie ein Tanz anfühlt. Jede Bewegung wird bewusst mit dem Atem synchronisiert – beim Einatmen öffnen wir uns, beim Ausatmen vertiefen wir die Haltungen. Dieser Kurs ist ideal für Menschen, die eine aktive, kraftvolle Praxis suchen, die sowohl den Körper stärkt als auch den Geist beruhigt. Die Sequenzen variieren von Stunde zu Stunde, sodass Sie immer wieder neue Herausforderungen und Inspirationen erleben. Erwarten Sie fließende Übergänge zwischen den Asanas, kreative Sequenzen und eine kraftvolle, energetisierende Praxis.</p>
+        <p><strong>Dauer:</strong> 60 Minuten | <strong>Level:</strong> Mittel bis Fortgeschritten</p>
+        <span class="price">18 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600" alt="Ashtanga Yoga">
+      <div class="class-card-body">
+        <h3>Ashtanga Yoga</h3>
+        <p>Die disziplinierte und kraftvolle Praxis nach Pattabhi Jois. Ashtanga Yoga folgt einer festgelegten Sequenz von Asanas, die in einer bestimmten Reihenfolge ausgeführt wird. Durch die Wiederholung derselben Sequenz entwickeln Sie Kraft, Flexibilität, Ausdauer und eine tiefe meditative Qualität. Der Atem (Ujjayi), die Blickpunkte (Drishti) und die Energieverschlüsse (Bandhas) bilden die drei Säulen dieser anspruchsvollen Praxis. Ashtanga ist ideal für Menschen, die eine strukturierte, herausfordernde und transformative Praxis suchen. In unserem Mysore-Stil können Sie in Ihrem eigenen Tempo üben, während der Lehrer Sie individuell anleitet und korrigiert.</p>
+        <p><strong>Dauer:</strong> 90 Minuten | <strong>Level:</strong> Fortgeschritten</p>
+        <span class="price">22 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1552196563-55cd4e45efb3?w=600" alt="Yin Yoga">
+      <div class="class-card-body">
+        <h3>Yin Yoga</h3>
+        <p>Die stille, meditative Praxis der Tiefenentspannung. Yin Yoga konzentriert sich auf die passiven, lang gehaltenen Körperhaltungen (3-5 Minuten), die tief in das Bindegewebe, die Faszien und die Gelenke wirken. Im Gegensatz zu den aktiveren Yang-Stilen des Yoga lädt Yin Yoga Sie ein, loszulassen, zu entspannen und die Stille in sich zu finden. Diese Praxis ist besonders wirksam zur Stressreduktion, zur Verbesserung der Flexibilität und zur Förderung der emotionalen Ausgeglichenheit. Yin Yoga basiert auf den Prinzipien der traditionellen chinesischen Medizin und stimuliert die Meridiane – die Energiekanäle des Körpers.</p>
+        <p><strong>Dauer:</strong> 75 Minuten | <strong>Level:</strong> Alle Level</p>
+        <span class="price">16 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600" alt="Kundalini Yoga">
+      <div class="class-card-body">
+        <h3>Kundalini Yoga</h3>
+        <p>Die Yoga der Bewusstseinserweiterung. Kundalini Yoga, wie es von Yogi Bhajan gelehrt wurde, kombiniert dynamische Atemübungen (Pranayama), körperliche Bewegungen (Kriyas), Mantras, Mudras und Meditation, um die schlafende Energie (Kundalini) an der Basis der Wirbelsäule zu erwecken und durch die Chakren nach oben zu leiten. Diese kraftvolle Praxis kann tiefgreifende transformative Erfahrungen auslösen und wird oft als die „königliche" Form des Yoga bezeichnet. Jede Stunde folgt einem bestimmten Thema oder einer Kriya, die auf die Öffnung bestimmter Chakren oder die Lösung spezifischer Blockaden ausgerichtet ist.</p>
+        <p><strong>Dauer:</strong> 90 Minuten | <strong>Level:</strong> Alle Level</p>
+        <span class="price">20 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1591228127791-8e2eaef098d3?w=600" alt="Power Yoga">
+      <div class="class-card-body">
+        <h3>Power Yoga</h3>
+        <p>Die intensive, fitnessorientierte Variante des Yoga. Power Yoga verbindet die traditionellen Asanas des Yoga mit Elementen aus dem Krafttraining und der Athletik. In diesem Kurs erwartet Sie eine schweißtreibende, herausfordernde Praxis, die Ihren gesamten Körper stärkt, die Ausdauer verbessert und gleichzeitig den Geist fokussiert. Power Yoga ist ideal für Menschen, die eine körperlich anspruchsvolle Praxis suchen, die ihnen hilft, Kraft aufzubauen, Kalorien zu verbrennen und gleichzeitig die Vorteile des Yoga – Flexibilität, Balance und Achtsamkeit – zu genießen. Die Stunden sind oft thematisch aufgebaut und können Elemente aus verschiedenen Yoga-Traditionen integrieren.</p>
+        <p><strong>Dauer:</strong> 60 Minuten | <strong>Level:</strong> Fortgeschritten</p>
+        <span class="price">19 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?w=600" alt="Restorative Yoga">
+      <div class="class-card-body">
+        <h3>Restorative Yoga</h3>
+        <p>Die ultimative Praxis der Erholung und Regeneration. Restorative Yoga verwendet Hilfsmittel wie Bolster, Decken, Blöcke und Gurte, um den Körper in vollständig unterstützten, passiven Haltungen zu positionieren, die tiefe Entspannung auf allen Ebenen ermöglichen. In dieser Praxis tun Sie im Wesentlichen nichts – Sie lassen sich von den Hilfsmitteln tragen und geben sich dem Loslassen hin. Restorative Yoga ist besonders wirksam zur Erholung nach intensiven Trainingseinheiten, zur Stressreduktion, bei Erschöpfung und Burnout, sowie zur Unterstützung des Immunsystems und der Hormonbalance.</p>
+        <p><strong>Dauer:</strong> 90 Minuten | <strong>Level:</strong> Alle Level</p>
+        <span class="price">17 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600" alt="Pränatal Yoga">
+      <div class="class-card-body">
+        <h3>Pränatal Yoga</h3>
+        <p>Speziell für werdende Mütter entwickelt. Pränatal Yoga bietet einen sicheren Raum, um sich während der Schwangerschaft durch sanfte Asanas, Atemübungen und Entspannungstechniken zu stärken und auf die Geburt vorzubereiten. Die Übungen sind speziell auf die Bedürfnisse schwangerer Frauen abgestimmt und helfen, typische Schwangerschaftsbeschwerden wie Rückenschmerzen, Übelkeit und Schlafstörungen zu lindern. Gleichzeitig stärken sie die Beckenbodenmuskulatur, fördern die Verbindung zum ungeborenen Kind und bereiten mental und emotional auf die Geburt vor. Unsere speziell ausgebildeten Lehrerinnen begleiten Sie liebevoll durch jede Phase Ihrer Schwangerschaft.</p>
+        <p><strong>Dauer:</strong> 75 Minuten | <strong>Level:</strong> Schwangere (ab 2. Trimester)</p>
+        <span class="price">18 € pro Stunde</span>
+      </div>
+    </div>
+
+    <div class="class-card">
+      <img src="https://images.unsplash.com/photo-1599447332411-fd1eb53d723e?w=600" alt="Meditation">
+      <div class="class-card-body">
+        <h3>Meditation & Pranayama</h3>
+        <p>Die Reise nach innen. In diesem Kurs lernen Sie verschiedene Meditationstechniken und Atemübungen kennen, die Ihnen helfen, den Geist zu beruhigen, die Konzentration zu schärfen und tiefe innere Ruhe zu finden. Wir praktizieren Vipassana-Meditation, geführte Visualisierungen, Mantra-Meditation, Yoga Nidra (tiefenorientierter Schlaf) sowie verschiedene Pranayama-Techniken wie Ujjayi, Nadi Shodhana (Wechselatmung), Kapalabhati und Bhramari. Dieser Kurs ist ideal für alle, die ihre Meditationspraxis vertiefen oder mit der Meditation beginnen möchten.</p>
+        <p><strong>Dauer:</strong> 60 Minuten | <strong>Level:</strong> Alle Level</p>
+        <span class="price">14 € pro Stunde</span>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:3rem;">Mitgliedschaften & Pakete</h3>
+  <p>Wir bieten verschiedene Mitgliedschaftsoptionen an, die auf Ihre Bedürfnisse zugeschnitten sind. Alle Mitgliedschaften beinhalten freien Zugang zu unseren Umkleidekabinen, Duschen, Tee-Lounge und einer umfangreichen Yoga-Bibliothek. Zusätzlich erhalten Sie als Mitglied 10% Rabatt auf alle Yoga-Kleidung in unserem Shop sowie kostenlose Teilnahme an monatlichen Workshops und Special Events.</p>
+
+  <div class="classes-grid">
+    <div class="class-card">
+      <div class="class-card-body">
+        <h3>10er Karte</h3>
+        <p>Perfekt für Einsteiger und Gelegenheitspraktizierende. Die 10er Karte ist 3 Monate gültig und kann für alle regulären Kurse eingelöst werden.</p>
+        <span class="price">130 €</span>
+      </div>
+    </div>
+    <div class="class-card">
+      <div class="class-card-body">
+        <h3>Monatsmitgliedschaft</h3>
+        <p>Unbegrenzter Zugang zu allen Kursen für einen Monat. Monatlich kündbar. Ideal, um Yoga in Ihren Alltag zu integrieren.</p>
+        <span class="price">89 € / Monat</span>
+      </div>
+    </div>
+    <div class="class-card">
+      <div class="class-card-body">
+        <h3>Jahresmitgliedschaft</h3>
+        <p>Das beste Preis-Leistungs-Verhältnis. Unbegrenzter Zugang zu allen Kursen, Workshops und exklusiven Mitgliederevents für ein ganzes Jahr.</p>
+        <span class="price">790 € / Jahr</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <h2>Premium Yoga Kleidung</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">Unsere Yoga-Kleidung wird mit Liebe zum Detail in Europa aus hochwertigen, nachhaltigen Materialien hergestellt. Wir verwenden ausschließlich GOTS-zertifizierte Bio-Baumwolle, recyceltes Polyester aus Plastikflaschen, Tencel aus nachhaltig bewirtschafteten Wäldern und natürliche Pflanzenfarben. Jede Kollektion wird unter fairen Arbeitsbedingungen produziert und spiegelt unsere Überzeugung wider, dass wahre Schönheit aus der Harmonie von Ästhetik, Komfort und ethischer Verantwortung entsteht.</p>
+
+  <div class="shop-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=500" alt="Yoga Leggings">
+      <div class="product-card-body">
+        <h3>Shanti Leggings High-Waist</h3>
+        <p>Unsere meistverkaufte Leggings aus atmungsaktivem, hochelastischem Bio-Baumwoll-Elasthan-Gemisch. Hoher Bund, versteckte Tasche, blickdicht.</p>
+        <div class="product-price">69,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500" alt="Yoga Top">
+      <div class="product-card-body">
+        <h3>Athflow Yoga Top</h3>
+        <p>Leichtes, atmungsaktives Top aus recyceltem Polyester mit integriertem BH. Perfekt für dynamische Vinyasa- und Power-Yoga-Stunden.</p>
+        <div class="product-price">44,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=500" alt="Yoga Hoodie">
+      <div class="product-card-body">
+        <h3>Prana Hoodie Organic</h3>
+        <p>Kuscheliger Kapuzenpullover aus 100% Bio-Baumwolle. Ideal für die Entspannung nach der Praxis oder als wärmende Schicht im Winter.</p>
+        <div class="product-price">79,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500" alt="Yoga Shorts">
+      <div class="product-card-body">
+        <h3>Asana Shorts</h3>
+        <p>Kurze Yoga-Hose aus leichtem Tencel-Material. Elastischer Bund, seitliche Taschen, perfekt für heiße Yogastunden und den Sommer.</p>
+        <div class="product-price">39,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1612532275579-5707959 durables?w=500" 
+           onerror="this.src='https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500'" alt="Yoga Jacke">
+      <div class="product-card-body">
+        <h3>Meditation Jacke</h3>
+        <p>Leichte, fließende Jacke aus Tencel und Bio-Baumwolle. Perfekt für Meditation, Yin Yoga und die kühleren Momente Ihrer Praxis.</p>
+        <div class="product-price">89,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=500" alt="Yoga Set">
+      <div class="product-card-body">
+        <h3>Shanti Komplettes Set</h3>
+        <p>Unser beliebtes Set bestehend aus Leggings, Top und Hoodie. Spare 15% gegenüber dem Einzelkauf. Erhältlich in 6 Farbvarianten.</p>
+        <div class="product-price">169,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1518623489648-a1725bd69634?w=500" alt="Yoga Matte">
+      <div class="product-card-body">
+        <h3>Naturkautschuk Matte</h3>
+        <p>Premium-Yogamatte aus 100% Naturkautschuk mit rutschfester Oberfläche. 5mm dick, 185cm lang, inkl. Tragegurt aus Bio-Baumwolle.</p>
+        <div class="product-price">99,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1601024445121-e5b82f020545?w=500" alt="Yoga Block">
+      <div class="product-card-body">
+        <h3>Kork Yoga Block Set</h3>
+        <p>Set aus 2 Yogablöcken aus nachhaltigem Kork. Perfekt zur Unterstützung in verschiedenen Asanas. Leicht, stabil und rutschfest.</p>
+        <div class="product-price">29,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1591291621164-2c6367723315?w=500" alt="Yoga Bolster">
+      <div class="product-card-body">
+        <h3>Restorative Bolster</h3>
+        <p>Hochwertiges Bolster-Kissen für Restorative Yoga und Meditation. Bezug aus Bio-Baumwolle, Füllung aus Buchweizenspreu.</p>
+        <div class="product-price">59,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1588165171080-c89acfa5ee83?w=500" alt="Yoga Tuch">
+      <div class="product-card-body">
+        <h3>Meditationstuch Organic</h3>
+        <p>Weiches, großes Tuch aus Bio-Baumwolle für Meditation, Shavasana oder als wärmende Decke. 180x100cm, in 8 Farben erhältlich.</p>
+        <div class="product-price">34,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1528717829022-17f91d070371?w=500" alt="Yoga Tasche">
+      <div class="product-card-body">
+        <h3>Yogatasche Travel</h3>
+        <p>Geräumige Yogatasche aus recyceltem Polyester. Passt für Matte bis 70cm Durchmesser plus Kleidung und Accessoires. Wasserabweisend.</p>
+        <div class="product-price">54,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500" alt="Yoga Accessoires">
+      <div class="product-card-body">
+        <h3>Yoga Zubehör Set</h3>
+        <p>Komplettes Zubehör-Set: Gurt aus Bio-Baumwolle, 2 Blöcke aus Kork, Augenkissen mit Lavendel und Tragetasche. Ideal als Geschenk.</p>
+        <div class="product-price">74,90 €</div>
+        <a href="#contact" class="btn">Bestellen</a>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:3rem;">Nachhaltigkeit & Qualität</h3>
+  <p>Bei Yoga Shanti ist Nachhaltigkeit keine Marketingphrase, sondern unsere tiefste Überzeugung. Jedes Kleidungsstück, das unser Haus verlässt, durchläuft einen strengen Qualitäts- und Nachhaltigkeitsprozess. Wir arbeiten ausschließlich mit Lieferanten zusammen, die unsere ethischen Standards teilen und nachweislich faire Löhne, sichere Arbeitsbedingungen und umweltfreundliche Produktionsmethoden garantieren.</p>
+  <p>Unsere Materialien stammen aus zertifiziert biologischem Anbau oder werden aus recycelten Rohstoffen gewonnen. Wir verwenden keine tierischen Materialien, keine schädlichen Chemikalien und keine umweltschädlichen Färbemethoden. Jede Kollektion wird in kleinen Chargen produziert, um Überproduktion und Abfall zu vermeiden. Unsere Verpackungen bestehen aus recyceltem Karton und kompostierbaren Materialien – wir haben das Ziel, bis 2027 vollständig plastikfrei zu werden.</p>
+  <p>Darüber hinaus spenden wir 2% unseres Jahresumsatzes an Umwelt- und Sozialprojekte in den Produktionsländern. Wir glauben daran, dass wahres Yoga nicht auf der Matte endet, sondern sich in jeder unserer Entscheidungen widerspiegelt – von der Wahl der Materialien bis zur Behandlung unserer Mitarbeiter und Partner.</p>
+</section>
+
+<section id="demo">
+  <div class="demo-section">
+    <h2>Live-Demo & Probetrainings</h2>
+    <p style="max-width:800px; margin:1rem auto;">Erleben Sie Yoga Shanti hautnah! Buchen Sie eine kostenlose Live-Demo oder ein Probetraining und überzeugen Sie sich selbst von der Qualität unserer Kurse, der Atmosphäre unseres Studios und der Kompetenz unserer Lehrer. Wir bieten verschiedene Optionen an, damit Sie den für Sie passenden Einstieg finden.</p>
+
+    <div class="demo-plans">
+      <div class="plan">
+        <h3>Schnupperstunde</h3>
+        <div class="plan-price">0 €</div>
+        <p>Kostenlos</p>
+        <ul>
+          <li>1 kostenlose Probestunde</li>
+          <li>Alle Einsteiger-Kurse verfügbar</li>
+          <li>Persönliche Beratung</li>
+          <li>Studio-Führung inklusive</li>
+          <li>Keine Verpflichtung</li>
+        </ul>
+        <a href="#contact" class="btn">Jetzt buchen</a>
+      </div>
+
+      <div class="plan featured">
+        <h3>Live-Demo Woche</h3>
+        <div class="plan-price">29 €</div>
+        <p>7 Tage Zugang</p>
+        <ul>
+          <li>Unbegrenzte Kursbesuche</li>
+          <li>Alle Kursstile verfügbar</li>
+          <li>Persönliche Einführungsberatung</li>
+          <li>Zugang zur Online-Bibliothek</li>
+          <li>10% Rabatt auf Kleidung</li>
+          <li>Exklusives Willkommensgeschenk</li>
+        </ul>
+        <a href="#contact" class="btn">Jetzt buchen</a>
+      </div>
+
+      <div class="plan">
+        <h3>Private Live-Demo</h3>
+        <div class="plan-price">79 €</div>
+        <p>60 Minuten 1:1</p>
+        <ul>
+          <li>Private Stunde mit Lehrer</li>
+          <li>Individuelle Anpassung</li>
+          <li>Ausführliche Analyse</li>
+          <li>Persönlicher Übungsplan</li>
+          <li>Flexibel terminierbar</li>
+          <li>Auch online möglich</li>
+        </ul>
+        <a href="#contact" class="btn">Jetzt buchen</a>
+      </div>
+
+      <div class="plan">
+        <h3>Gruppen-Demo</h3>
+        <div class="plan-price">149 €</div>
+        <p>Bis zu 10 Personen</p>
+        <ul>
+          <li>Private Gruppenstunde</li>
+          <li>Ideal für Firmen & Teams</li>
+          <li>Individuelle Gestaltung</li>
+          <li>Teambuilding-Elemente</li>
+          <li>Auch vor Ort möglich</li>
+          <li>Getränke & Snacks inklusive</li>
+        </ul>
+        <a href="#contact" class="btn">Jetzt buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-section">
+    <h2>Kontakt</h2>
+    <p style="text-align:center;">Wir freuen uns auf Ihre Nachricht! Ob Fragen zu unseren Kursen, zur Kleidung oder zu Mitgliedschaften – unser Team steht Ihnen gerne zur Verfügung.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Besuchen Sie uns</h3>
+        <p><strong>Yoga Shanti Studio</strong><br>
+        Lotusstraße 42<br>
+        80331 München, Deutschland</p>
+        <p><strong>Telefon:</strong> +49 (0) 89 123 456 78</p>
+        <p><strong>E-Mail:</strong> info@yoga-shanti.de</p>
+        <p><strong>Öffnungszeiten:</strong><br>
+        Montag – Freitag: 06:30 – 21:30 Uhr<br>
+        Samstag: 08:00 – 18:00 Uhr<br>
+        Sonntag: 09:00 – 14:00 Uhr</p>
+        <h3>Folgen Sie uns</h3>
+        <p>Bleiben Sie in Kontakt mit uns auf Instagram, Facebook und YouTube für tägliche Inspiration, Yogatipps und exklusive Angebote.</p>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Nachricht! Wir melden uns innerhalb von 24 Stunden bei Ihnen.'); this.reset();">
+        <h3>Nachricht senden</h3>
+        <input type="text" placeholder="Ihr Name" required>
+        <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+        <input type="tel" placeholder="Ihre Telefonnummer (optional)">
+        <select required style="padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
+          <option value="">Betreff auswählen</option>
+          <option>Kursanfrage</option>
+          <option>Kleidung & Shop</option>
+          <option>Mitgliedschaft</option>
+          <option>Live-Demo buchen</option>
+          <option>Private Stunden</option>
+          <option>Sonstiges</option>
+        </select>
+        <textarea placeholder="Ihre Nachricht..." required></textarea>
+        <button type="submit" class="btn">Nachricht senden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="legal-section">
+  <h2>Datenschutzerklärung</h2>
+  <p><strong>Stand:</strong> 29. September 2026</p>
+  <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG, BDSG). Nachstehend informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.</p>
+
+  <h3>1. Verantwortlicher</h3>
+  <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>
+  Yoga Shanti GmbH<br>
+  Lotusstraße 42, 80331 München<br>
+  Geschäftsführerin: Anjali Meier<br>
+  E-Mail: datenschutz@yoga-shanti.de<br>
+  Telefon: +49 (0) 89 123 456 78</p>
+
+  <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+  <p>Personenbezogene Daten sind Informationen, die dazu genutzt werden können, Ihre Identität zu erfahren. Wir erheben, verarbeiten und nutzen personenbezogene Daten nur im Einklang mit den geltenden datenschutzrechtlichen Bestimmungen.</p>
+  <p><strong>a) Beim Besuch unserer Website:</strong> Bei jedem Zugriff auf unsere Website werden automatisch folgende Daten erhoben: IP-Adresse, Datum und Uhrzeit des Zugriffs, Name und URL der abgerufenen Datei, Website, von der aus der Zugriff erfolgt (Referrer-URL), verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers. Diese Daten werden ausschließlich zur Sicherstellung eines reibungslosen Verbindungsaufbaus, zur Gewährleistung der Systemsicherheit und zu weiteren administrativen Zwecken verarbeitet. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Rechtsgrundlage für die Verarbeitung bildet Art. 6 Abs. 1 lit. f DSGVO.</p>
+  <p><strong>b) Bei Kontaktaufnahme:</strong> Wenn Sie uns per Kontaktformular oder E-Mail kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen sechs Monate bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (bei vertragsanbahnenden Anfragen) bzw. Art. 6 Abs. 1 lit. f DSGVO (bei sonstigen Anfragen).</p>
+  <p><strong>c) Bei Buchung von Kursen und Mitgliedschaften:</strong> Zur Durchführung von Kursen und Mitgliedschaften erheben wir folgende Daten: Name, Anschrift, E-Mail-Adresse, Telefonnummer, Geburtsdatum (optional), Gesundheitsinformationen (nur mit ausdrücklicher Einwilligung), Bankverbindung bzw. Zahlungsinformationen. Diese Daten werden ausschließlich zur Vertragserfüllung verarbeitet (Art. 6 Abs. 1 lit. b DSGVO).</p>
+  <p><strong>d) Bei Bestellungen im Shop:</strong> Im Rahmen der Bestellabwicklung erheben wir die für die Vertragserfüllung erforderlichen Daten: Name, Lieferadresse, E-Mail-Adresse, Zahlungsinformationen. Die Datenweitergabe an Versanddienstleister und Zahlungsanbieter erfolgt ausschließlich im erforderlichen Umfang.</p>
+
+  <h3>3. Cookies</h3>
+  <p>Unsere Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die mit Hilfe des Browsers auf Ihrem Endgerät abgelegt werden. Sie richten keinen Schaden an. Wir nutzen Cookies dazu, unser Angebot nutzerfreundlich zu gestalten. Einige Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen. Sie ermöglichen es uns, Ihren Browser beim nächsten Besuch wiederzuerkennen. Wenn Sie dies nicht wünschen, so können Sie Ihren Browser so einrichten, dass er Sie über das Setzen von Cookies informiert und Sie dies nur im Einzelfall erlauben. Bei der Deaktivierung von Cookies kann die Funktionalität unserer Website eingeschränkt sein.</p>
+
+  <h3>4. Ihre Rechte</h3>
+  <p>Ihnen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch nach der DSGVO zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei uns (datenschutz@yoga-shanti.de) oder der zuständigen Aufsichtsbehörde beschweren.</p>
+
+  <h3>5. Speicherdauer</h3>
+  <p>Wir speichern personenbezogene Daten nur so lange, wie dies für die Erfüllung der jeweiligen Zwecke oder aufgrund gesetzlicher Aufbewahrungsfristen erforderlich ist. Nach Wegfall des Zweckes oder Ablauf der Fristen werden die Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gelöscht.</p>
+
+  <h3>6. SSL-Verschlüsselung</h3>
+  <p>Unsere Website nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung vertraulicher Inhalte eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+</div>
+
+<div class="legal-section">
+  <h2>Impressum & Disclaimer</h2>
+
+  <h3>Impressum</h3>
+  <p><strong>Angaben gemäß § 5 TMG:</strong><br>
+  Yoga Shanti GmbH<br>
+  Lotusstraße 42<br>
+  80331 München<br>
+  Deutschland</p>
+  <p><strong>Vertreten durch:</strong> Anjali Meier (Geschäftsführerin)</p>
+  <p><strong>Kontakt:</strong><br>
+  Telefon: +49 (0) 89 123 456 78<br>
+  E-Mail: info@yoga-shanti.de</p>
+  <p><strong>Registereintrag:</strong><br>
+  Eintragung im Handelsregister<br>
+  Registergericht: Amtsgericht München<br>
+  Registernummer: HRB 123456</p>
+  <p><strong>Umsatzsteuer-ID:</strong><br>
+  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE123456789</p>
+  <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+  Anjali Meier<br>
+  Lotusstraße 42<br>
+  80331 München</p>
+
+  <h3>Haftungsausschluss (Disclaimer)</h3>
+
+  <h4>Haftung für Inhalte</h4>
+  <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+  <h4>Haftung für Links</h4>
+  <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+  <h4>Urheberrecht</h4>
+  <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+  <h4>Gesundheitlicher Hinweis</h4>
+  <p>Die auf dieser Website bereitgestellten Informationen zu Yoga-Kursen, Yoga-Praktiken und gesundheitlichen Themen dienen ausschließlich der allgemeinen Information und ersetzen in keinem Fall eine professionelle medizinische Beratung, Diagnose oder Behandlung durch einen qualifizierten Arzt oder Therapeuten. Yoga ist eine körperliche Praxis, die bei unsachgemäßer Ausführung zu Verletzungen führen kann. Bitte konsultieren Sie vor Beginn eines Yoga-Programms Ihren Arzt, insbesondere wenn Sie unter gesundheitlichen Beschwerden leiden, schwanger sind oder sich von einer Verletzung oder Operation erholen. Die Teilnahme an unseren Kursen erfolgt auf eigene Verantwortung. Unsere Yogalehrer sind qualifiziert, um Yoga-Unterricht zu erteilen, jedoch keine Ärzte oder Heilpraktiker.</p>
+
+  <h4>Online-Streitbeilegung</h4>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" style="color:var(--accent);">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Yoga Shanti</h4>
+      <p>Ihr Premium-Studio für authentisches Yoga und nachhaltige Yoga-Kleidung in München. Seit 2015 begleiten wir Menschen auf ihrem Weg zu mehr Balance, Gesundheit und innerem Frieden.</p>
+    </div>
+    <div>
+      <h4>Schnelllinks</h4>
+      <ul>
+        <li><a href="#home">Startseite</a></li>
+        <li><a href="#about">Über Yoga</a></li>
+        <li><a href="#classes">Kurse</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#demo">Live-Demo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">AGB</a></li>
+        <li><a href="#">Widerrufsrecht</a></li>
+        <li><a href="#">Cookie-Richtlinie</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p>Lotusstraße 42<br>80331 München<br>+49 (0) 89 123 456 78<br>info@yoga-shanti.de</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2026 Yoga Shanti GmbH. Alle Rechte vorbehalten. | Mit Liebe und Achtsamkeit gestaltet in München 🕉️</p>
+    <p>Namaste – Die Licht in mir verbeugt sich vor dem Licht in dir.</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Fade-in animation on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.class-card, .product-card, .plan').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
